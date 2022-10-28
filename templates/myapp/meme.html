@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} View all meme | Meme @ ComedySci {% endblock %}
+
+{% block content %}
+    <h1>View all meme</h1>
+    <table style="width:100%">
+        <tr>
+            <th>Meme path</th>
+            <th>Like</th>
+            <th>Share</th>
+            <th>Comment</th>
+            <th>Reach</th>
+            <th>Engagement</th>
+        </tr>
+        {% for m in meme %}
+        <tr>
+            <td>{{ m.path }}</td>
+            <td>{{ m.like }}</td>
+            <td>{{ m.share }}</td>
+            <td>{{ m.comment }}</td>
+            <td>{{ m.reach }}</td>
+            <td>{% if m.Engagement >= 0.1 %}Viral{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table><br>
+    <a href="{% url 'myapp:index' %}">Back to index</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Upload meme | Meme @ ComedySci {% endblock %}
+
+{% block content %}
+    <h1>Upload meme</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload meme</button>
+    </form><br>
+    <a href="{% url 'myapp:index' %}">Back to index</a>
+{% endblock %}

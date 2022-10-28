@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Meme @ ComedySci {% endblock %}
+
+{% block content %}
+    <h1> Hello, Welcome to CS (ComedySci) </h1>
+    <p>Please select menu</p>
+    <ul>
+        <li><a href="{% url 'myapp:upload' %}">Upload meme</a></li>
+        <li><a href="{% url 'myapp:meme' %}">View all meme!</a></li>
+    </ul>
+{% endblock %}
